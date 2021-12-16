@@ -15,19 +15,19 @@
 
 <script>
 
-import Evaluation from "./Evaluation.vue";
+import Evaluation from './Evaluation.vue';
 
 export default {
     data() {
         return {
             // todo
-            avatar: "https://avatars.githubusercontent.com/u/61601336?v=4",
-            author: "Vak modry",
-            project: "Lemon"
-        }
+            avatar: 'https://avatars.githubusercontent.com/u/61601336?v=4',
+            author: 'Vak modry',
+            project: 'Lemon',
+        },
     },
     components: {
-        Evaluation
-    }
+        Evaluation,
+    },
 }
 </script>

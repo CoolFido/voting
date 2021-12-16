@@ -22,4 +22,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // testing pico
-Route::view("/test", "home");
+Route::view('/test', 'home');
