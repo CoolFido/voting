@@ -24,7 +24,7 @@ export default {
             avatar: 'https://avatars.githubusercontent.com/u/61601336?v=4',
             author: 'Vak modry',
             project: 'Lemon',
-        },
+        }
     },
     components: {
         Evaluation,
