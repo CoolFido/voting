@@ -11,7 +11,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
  *
  * @property int $id
  * @property string $name
- * @property string $discord_id?
+ * @property string $discord_id
  *
  * @property \Carbon\Carbon $created_at?
  * @property \Carbon\Carbon $updated_at?
@@ -19,6 +19,8 @@ use Illuminate\Contracts\Auth\Authenticatable;
 class User extends Model implements Authenticatable
 {
     use HasFactory;
+    
+    protected $fillable = ['name', 'discord_id'];
 
     /**
      * Get the name of the unique identifier for the user.
@@ -27,7 +29,7 @@ class User extends Model implements Authenticatable
      */
     public function getAuthIdentifierName()
     {
-        return $this->getKeyName();
+        return 'discord_id';
     }
 
     /**
@@ -37,7 +39,7 @@ class User extends Model implements Authenticatable
      */
     public function getAuthIdentifier()
     {
-        return $this->getKey();
+        return $this->discord_id;
     }
 
     /**
