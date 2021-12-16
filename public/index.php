@@ -1,5 +1,13 @@
 <?php
 
+/** 
+ *
+ * To co robis roky ja urobim za noc zo srandy
+ *
+ * Vyrobila tvurci skupina kuloveho fida a modreho vaka 2k21
+ *
+ */
+
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
