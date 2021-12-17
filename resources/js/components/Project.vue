@@ -7,9 +7,15 @@
                     <div class="text-primary">{{ author }}</div>
                     <h3 class="text-secondary">{{ project }}</h3>
                 </div>
+                <div class="ms-3">
+                    <button v-on:click="shown = !shown" 
+                            class="btn btn-outline-secondary rounded-0">
+                        Evaluate
+                    </button>
+                </div>
             </div>                
         </div>
-        <evaluation></evaluation>
+        <evaluation v-if="shown"></evaluation>
     </div> 
 </template>
 
@@ -24,10 +30,11 @@ export default {
             avatar: 'https://avatars.githubusercontent.com/u/61601336?v=4',
             author: 'Vak modry',
             project: 'Lemon',
+            shown: false
         }
     },
     components: {
         Evaluation,
-    },
+    }
 }
 </script>

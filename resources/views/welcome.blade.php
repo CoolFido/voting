@@ -12,7 +12,7 @@
     @endforeach
     <div class="card rounded-0 p-5 bg-dark shadow-lg text-secondary mx-sm-0 mx-5">
         
-        <h1>This website is voting system for galaxycode.</h1>
+        <h1>GalaxyCode voting system</h1>
         <a href="" class="text-decoration-none">
             <h3 class="text-primary ">Log in</h3>
         </a>
