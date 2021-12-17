@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Integrations\Discord;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -36,5 +37,16 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    
+    /**
+     * Redirects user to DC OAuth link to log into this app.
+     *
+     * @return void
+     */
+    public function login()
+    {
+        return redirect()
+            ->to(Discord::get()->getAuthorizationUrl(['scope' => 'identify']));
     }
 }
