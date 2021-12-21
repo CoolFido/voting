@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CompetitionsController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\API\ProjectsController;
 use Illuminate\Support\Facades\Route;
 
 /**
@@ -16,4 +16,10 @@ Route::middleware('auth')->group(function () {
      */
     Route::get('competitions', [CompetitionsController::class, 'index']);
     Route::get('competitions/{competition}', [CompetitionsController::class, 'show']);
+    
+    /**
+     * Projects
+     */
+    Route::post('projects/{project}', [ProjectsController::class, 'evaluate']);
+    Route::post('projects/{project}/unevaluate', [ProjectsController::class, 'unevaluate']);
 });
