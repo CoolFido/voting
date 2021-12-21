@@ -24,12 +24,13 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
-        'competition_id', 'user_id', 'name',
-        'description', 'code_url', 'production_url',
+        'competition_id', 'name', 'description',
+        'code_url', 'production_url',
     ];
 
     /**
      * Relations
      */
     public function competition() { return $this->belongsTo(Competition::class); }
+    public function evaluations() { return $this->hasMany(ProjectEvaluation::class); }
 }
