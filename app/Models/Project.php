@@ -32,5 +32,6 @@ class Project extends Model
      * Relations
      */
     public function competition() { return $this->belongsTo(Competition::class); }
+    public function user() { return $this->belongsTo(User::class); }
     public function evaluations() { return $this->hasMany(ProjectEvaluation::class); }
 }
