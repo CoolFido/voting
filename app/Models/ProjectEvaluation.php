@@ -17,7 +17,7 @@ class ProjectEvaluation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['project_id', 'score'];
+    protected $fillable = ['user_id', 'project_id', 'score'];
     public $timestamps = false;
 
     /**
