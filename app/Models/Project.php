@@ -27,6 +27,22 @@ class Project extends Model
         'competition_id', 'name', 'description',
         'code_url', 'production_url',
     ];
+    protected $appends = ['given_score'];
+    
+    /**
+     * If current user has evaluated this project
+     * returns the score, otherwise returns null.
+     *
+     * @return void
+     */
+    public function getGivenScoreAttribute()
+    {
+        return $this->evaluations()
+            ->where('user_id', auth()->id())
+            ->get()
+            ->first()
+            ->score ?? null;
+    }
 
     /**
      * Relations
