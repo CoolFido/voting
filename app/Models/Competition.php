@@ -22,4 +22,9 @@ class Competition extends Model
 
     protected $fillable = ['name', 'from', 'to'];
     public $dates = ['from', 'to'];
+
+    /**
+     * Relations
+     */
+    public function projects() { return $this->hasMany(Project::class); }
 }
