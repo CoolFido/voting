@@ -52,6 +52,7 @@ export default {
                     name: this.name,
                     description: this.description,
                     code_url: this.code_url,
+                    production_url: this.production_url,
                 })
                 .then(res => {
                     if (res.status == 201)

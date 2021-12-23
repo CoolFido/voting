@@ -8,8 +8,17 @@ use App\Models\Project;
 
 class EvalutaionsController extends Controller
 {
+    /**
+     * Returns information about evaluation from current user.
+     *
+     * @param Request $request
+     * @param Project $project
+     * @return void
+     */
     public function show(Request $request, Project $project)
     {
-        return $project->evaluations()->where('user_id', auth()->id())->first();
+        return $project->evaluations()
+            ->where('user_id', auth()->id())
+            ->first();
     }
 }
