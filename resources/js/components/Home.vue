@@ -1,5 +1,5 @@
 <template>
-   <component :is="component" :id="id"></component>
+<div class="text-secondary"><component :is="component" :id="id"></component></div>
 </template>
 
 <script>

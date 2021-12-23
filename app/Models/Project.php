@@ -25,7 +25,7 @@ class Project extends Model
 
     protected $fillable = [
         'competition_id', 'name', 'description',
-        'code_url', 'production_url',
+        'code_url', 'production_url', 
     ];
     protected $appends = ['given_score'];
     
@@ -48,6 +48,6 @@ class Project extends Model
      * Relations
      */
     public function competition() { return $this->belongsTo(Competition::class); }
-    public function user() { return $this->belongsTo(User::class); }
+    public function user() { return $this->belongsTo(User::class, "user_id", "discord_id"); }
     public function evaluations() { return $this->hasMany(ProjectEvaluation::class); }
 }

@@ -48,4 +48,23 @@ class ProjectsController extends Controller
         return response()
             ->noContent();
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'competition_id' => "required|int",
+            'name' => 'required|string',
+            'description' => "required|string",
+            'code_url' => ["required", "string", "regex:/^(https?:\/\/)?git(hub|lab|bucket).com\/.+$/i"]
+        ]);
+
+        $project = new Project;
+        $project->competition_id = $request->competition_id;
+        $project->user_id = auth()->id();
+        $project->name = $request->name;
+        $project->description = $request->description;
+        $project->code_url = $request->code_url;
+        $project->saveOrFail();
+        return $project->load("user"); 
+    }
 }

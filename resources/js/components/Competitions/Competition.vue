@@ -1,10 +1,10 @@
 <template>
-    <div class="col-xl-4 col-lg-6 m-4">
-        <div class="card p-3 shadow-lg bg-dark">
-            {{ name }} {{ from }} {{ to }}
-            <button v-on:click="show">toz klikaj</button>
-        </div>
-   </div>
+    <div class="card p-3 shadow-lg bg-dark">
+        <h1 class="text-secondary">{{ name }}</h1>
+        <p class="text-primary">Od {{ dateFormat(from) }} do {{ dateFormat(to) }}</p>
+
+        <button v-on:click="show" class="btn btn-outline-secondary rounded-0">Zobrazit soutěž</button>
+    </div>
 </template>
 
 <script>
@@ -22,6 +22,18 @@ export default {
         show() {
             this.$parent.$parent.id = this.id
             this.$parent.$parent.component = Projects;
+        },
+        dateFormat(date_string) {
+            return new Date(date_string)
+                .toLocaleString(
+                    "cs-CZ", 
+                    {
+                        weekday: "long", 
+                        day: "numeric", 
+                        month: "long", 
+                        year: "numeric"
+                    }
+                )
         }
     }
 }

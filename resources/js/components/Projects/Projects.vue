@@ -1,25 +1,32 @@
 <template>
 <div>
-    <search></search>
-    <div class="min-vh-100 container">
-        <div class="row d-flex justify-content-center">
+    <div class="min-vh-100 ">
+        <div
+            class="d-flex justify-content-center flex-column pt-5"
+            v-if="loaded"
+        >
             <project
-                :project="project.project"
-                :author="project.author"
-                :avatar="project.avatar"
-                :shown="project.shown"
+                :project="project.name"
+                :author="project.user.name"
+                :avatar="`https://cdn.discordapp.com/avatars/${project.user.discord_id}/${project.user.avatar_hash}.png`"
+                :url="project.code_url"
+                :description="project.description"
+                :id="project.id"
                 v-for="(project, index) in projects" 
                 v-bind:key="index"
             />
-       </div>
+        </div>
+        <div class="spinner-border text-secondary" role="status" v-if="!loaded">
+            <span class="visually-hidden">Loading...</span>
+        </div>
    </div>
+   <UploadButton />
 </div>
 </template>
 
 <script>
-
 import Project from "./Project.vue"
-import Search from "./Search.vue"
+import UploadButton from "./Upload/Button.vue"
 
 export default {
     props: [
@@ -27,7 +34,8 @@ export default {
     ],
     data() {
         return {
-            projects: []
+            projects: [],
+            loaded: false
         }
     },
     mounted() {
@@ -35,10 +43,11 @@ export default {
         .then(response => {
             this.projects = response.data["projects"]
         })
+        this.loaded = true
     },
     components: {
         Project,
-        Search
+        UploadButton
     }
 }
 </script>

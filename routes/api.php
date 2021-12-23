@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CompetitionsController;
+use App\Http\Controllers\Api\EvalutaionsController;
 use App\Http\Controllers\API\ProjectsController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,11 @@ Route::middleware('auth')->group(function () {
      */
     Route::post('projects/{project}', [ProjectsController::class, 'evaluate']);
     Route::post('projects/{project}/unevaluate', [ProjectsController::class, 'unevaluate']);
+    Route::post('projects', [ProjectsController::class, 'store']);
+
+    /**
+     * Evaluations
+     */
+    Route::get('evaluations/{project}', [EvalutaionsController::class, 'show']);
+
 });
