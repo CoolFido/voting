@@ -3,6 +3,13 @@
 /** 
  *
  * To co robis roky ja urobim za noc zo srandy
+ * tak prej vic noci
+ *
+ * Moravakuv denicek bolesti:
+ *
+ * priste bez bootstrapu
+ * ff je skvela zkratka
+ * priste musi hra koncit driv pls
  *
  * Vyrobila tvurci skupina kuloveho fida a modreho vaka 2k21
  *
