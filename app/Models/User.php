@@ -13,6 +13,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
  * @property string $name
  * @property string $discord_id
  * @property string $avatar_hash
+ * @property bool $admin
  *
  * @property \Carbon\Carbon $created_at?
  * @property \Carbon\Carbon $updated_at?
@@ -20,7 +21,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
 class User extends Model implements Authenticatable
 {
     use HasFactory;
-    
+
     protected $fillable = ['name', 'discord_id', 'avatar_hash'];
 
     /**

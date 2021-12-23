@@ -25,10 +25,10 @@ class Project extends Model
 
     protected $fillable = [
         'competition_id', 'name', 'description',
-        'code_url', 'production_url', 
+        'code_url', 'production_url',
     ];
     protected $appends = ['given_score'];
-    
+
     /**
      * If current user has evaluated this project
      * returns the score, otherwise returns null.

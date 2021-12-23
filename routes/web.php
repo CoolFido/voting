@@ -37,4 +37,4 @@ Route::name('discord.')->prefix('discord')->group(function () {
 });
 
 // Dummy route for testing purposes
-Route::get('logout', fn() => null)->name('logout');
+//Route::get('logout', fn() => null)->name('logout');
