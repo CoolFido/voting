@@ -7,7 +7,7 @@
 
 <script>
 
-import Upload from "./Upload.vue"
+import Upload from './Upload.vue';
 
 export default {
     data() {
@@ -16,7 +16,7 @@ export default {
         }
     },
     components: {
-        Upload
-    }
+        Upload,
+    },
 }
 </script>

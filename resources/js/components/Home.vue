@@ -4,12 +4,12 @@
 
 <script>
 
-import Competitions from "./Competitions/Competitions.vue";
+import Competitions from './Competitions/Competitions.vue';
 
 export default {
     data() {
         return {
-            component: "", 
+            component: '',
             id: 0
         }
     },

@@ -1,7 +1,11 @@
 <template>
     <div class="card p-3 shadow-lg bg-dark">
-        <h1 class="text-secondary">{{ name }}</h1>
-        <p class="text-primary">Od {{ dateFormat(from) }} do {{ dateFormat(to) }}</p>
+        <h1 class="text-secondary">
+            {{ name }}
+        </h1>
+        <p class="text-primary">
+            Od {{ dateFormat(from) }} do {{ dateFormat(to) }}
+        </p>
 
         <button v-on:click="show" class="btn btn-outline-secondary rounded-0">Zobrazit soutěž</button>
     </div>
@@ -9,14 +13,14 @@
 
 <script>
 
-import Projects from "../Projects/Projects.vue";
+import Projects from '../Projects/Projects.vue';
 
 export default {
     props: [
-        "id",
-        "name",
-        "from",
-        "to"
+        'id',
+        'name',
+        'from',
+        'to',
     ],
     methods: {
         show() {
@@ -26,15 +30,15 @@ export default {
         dateFormat(date_string) {
             return new Date(date_string)
                 .toLocaleString(
-                    "cs-CZ", 
+                    'cs-CZ',
                     {
-                        weekday: "long", 
-                        day: "numeric", 
-                        month: "long", 
-                        year: "numeric"
-                    }
-                )
+                        weekday: 'long',
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric',
+                    },
+                );
         }
-    }
+    },
 }
 </script>

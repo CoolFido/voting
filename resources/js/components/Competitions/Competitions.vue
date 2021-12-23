@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div 
+        <div
             v-for="competition in competitions"
             :key="competition.id"
             class="d-block mx-auto col-xl-4 col-lg-6 m-4"
@@ -17,20 +17,21 @@
 
 <script>
 
-import Competition from "./Competition.vue";
+import Competition from './Competition.vue';
 
 export default {
     data() {
         return {
-            competitions: []
+            competitions: [],
         }
     },
     mounted() {
-        axios.get("/api/competitions")
-        .then(response => this.competitions = response.data)
+        axios.get('/api/competitions')
+            .then(res => this.competitions = res.data)
+            .catch(err => alert('Nastala chyba při načítání soutěží. Zkuste to znovu.'));
     },
     components: {
-        Competition
-    }
+        Competition,
+    },
 }
 </script>

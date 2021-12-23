@@ -1,6 +1,6 @@
 <?php
 
-/** 
+/**
  *
  * To co robis roky ja urobim za noc zo srandy
  * tak prej vic noci
