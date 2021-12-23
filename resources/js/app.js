@@ -1,12 +1,12 @@
 require('./bootstrap');
 
 import Vue from 'vue';
-import Project from './components/Project.vue';
+import Home from './components/Home.vue';
 
 new Vue({
     el: '#app',
     components: { 
-        Project
+        Home
     }
 });
 

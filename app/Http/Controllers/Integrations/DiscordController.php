@@ -24,7 +24,7 @@ class DiscordController extends Controller
          */
         if (!$request->has('code'))
             return redirect()
-                ->to(Discord::get()->getAuthorizationUrl(['scope' => 'identify', 'guild']));
+                ->to(Discord::get()->getAuthorizationUrl(['scope' => 'identify']));
 
         /**
          * Get DC OAuth access token and resource owner object.
@@ -52,6 +52,7 @@ class DiscordController extends Controller
             'discord_id' => $owner->getId(),
         ], [
             'name' => $owner->getUsername(),
+            'avatar_hash' => $owner->getAvatarHash(),
         ]);
         
         /**

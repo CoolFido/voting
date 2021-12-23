@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Landing page
+ */
 Route::view('/', 'welcome')->name('welcome');
 
 /**
@@ -33,8 +36,5 @@ Route::name('discord.')->prefix('discord')->group(function () {
     Route::get('unauthorize', [DiscordController::class, 'destroy'])->name('unauthorize');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Dummy route for testing purposes
 Route::get('logout', fn() => null)->name('logout');
-
-// testing pico
-Route::view('/test', 'home');

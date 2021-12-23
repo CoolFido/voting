@@ -12,6 +12,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
  * @property int $id
  * @property string $name
  * @property string $discord_id
+ * @property string $avatar_hash
  *
  * @property \Carbon\Carbon $created_at?
  * @property \Carbon\Carbon $updated_at?
@@ -20,7 +21,7 @@ class User extends Model implements Authenticatable
 {
     use HasFactory;
     
-    protected $fillable = ['name', 'discord_id'];
+    protected $fillable = ['name', 'discord_id', 'avatar_hash'];
 
     /**
      * Get the name of the unique identifier for the user.
